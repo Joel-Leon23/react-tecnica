@@ -4,6 +4,7 @@
 import './App.css'
 import useCatImage from './hooks/useFirstWordFactRetrieval'
 import useCatFact from './hooks/useCatFact'
+import getCatImageURL from './services/catImageUrl'
 
 const App = () => {
   const { fact, refreshFact } = useCatFact()
@@ -22,7 +23,7 @@ const App = () => {
 
         {fact && <p>{fact}</p>}
         {firstWord &&
-          <img src={`https://cataas.com/cat/says/${firstWord}?fontSize=50&fontColor=white`} alt='Image of a cat with text' />}
+          <img src={getCatImageURL(firstWord)} alt='Image of a cat with text' />}
       </main>
     </>
   )
